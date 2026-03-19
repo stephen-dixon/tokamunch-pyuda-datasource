@@ -3,7 +3,7 @@ requires = ["setuptools>=68", "wheel", "setuptools_scm[toml]>=8"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "tomamunch-pyuda-datasource"
+name = "tokamunch-pyuda-datasource"
 dynamic = ["version"]
 description = "Pyuda tokamap data source plugin for tokamunch"
 readme = "README.md"
@@ -44,7 +44,7 @@ where = ["src"]
 
 [tool.setuptools_scm]
 version_scheme = "post-release"
-local_scheme = "node-and-date"
+local_scheme = "no-local-version" #"node-and-date"
 write_to = "src/tokamunch_pyuda_datasource/_version.py"
 
 # [tool.pytest.ini_options]
