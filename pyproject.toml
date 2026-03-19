@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=68", "wheel", "setuptools_scm[toml]>=8"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tomamunch-pyuda-datasource"
+dynamic = ["version"]
+description = "Pyuda tokamap data source plugin for tokamunch"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  { name = "Stephen Dixon", email = "stephen.dixon@ukaea.uk" }
+]
+license = { text = "MIT" }
+dependencies = [
+  "tokamunch",
+  "pyuda"
+]
+keywords = ["tokamap", "libtokamap", "pyuda", "tokamunch", "mappings"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent"
+]
+
+[project.urls]
+Homepage = "https://github.com/stephen-dixon/tokamunch-pyuda-datasource"
+Repository = "https://github.com/stephen-dixon/tokamap-pyuda-datasource"
+Issues = "https://github.com/stephen-dixon/tokamunch-pyuda-datasource/issues"
+
+[project.entry-points."tokamunch.data_sources"]
+pyuda = "tokamunch_pyuda_data_source.plugin:create_data_source"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools_scm]
+version_scheme = "post-release"
+local_scheme = "node-and-date"
+write_to = "src/tokamunch/_version.py"
+
+# [tool.pytest.ini_options]
+# testpaths = ["tests"]
