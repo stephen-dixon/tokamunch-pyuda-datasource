@@ -34,7 +34,7 @@ Repository = "https://github.com/stephen-dixon/tokamunch-pyuda-datasource"
 Issues = "https://github.com/stephen-dixon/tokamunch-pyuda-datasource/issues"
 
 [project.entry-points."tokamunch.data_sources"]
-pyuda = "tokamunch_pyuda_data_source.plugin:create_data_source"
+pyuda = "tokamunch_pyuda_datasource.plugin:create_data_source"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
