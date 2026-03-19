@@ -1,0 +1,5 @@
+**/__pycache__
+**/*egg-info
+src/tokamunch_pyuda_datasource/_version.py
+build/*
+
