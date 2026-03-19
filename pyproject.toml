@@ -30,7 +30,7 @@ classifiers = [
 
 [project.urls]
 Homepage = "https://github.com/stephen-dixon/tokamunch-pyuda-datasource"
-Repository = "https://github.com/stephen-dixon/tokamap-pyuda-datasource"
+Repository = "https://github.com/stephen-dixon/tokamunch-pyuda-datasource"
 Issues = "https://github.com/stephen-dixon/tokamunch-pyuda-datasource/issues"
 
 [project.entry-points."tokamunch.data_sources"]
@@ -45,7 +45,7 @@ where = ["src"]
 [tool.setuptools_scm]
 version_scheme = "post-release"
 local_scheme = "node-and-date"
-write_to = "src/tokamunch/_version.py"
+write_to = "src/tokamunch-pyuda-datasource/_version.py"
 
 # [tool.pytest.ini_options]
 # testpaths = ["tests"]
