@@ -14,7 +14,6 @@ class PyudaDataSource(libtokamap.DataSource):
         pyuda.Client.server = host
         pyuda.Client.port = port
         self.client = pyuda.Client()
-        # self.cache = []
 
     @override
     def get(self, args: dict[str, str]) -> np.ndarray:
@@ -30,10 +29,5 @@ class PyudaDataSource(libtokamap.DataSource):
         plugin_args = [f'{k}={v}' for (k, v) in args.items()]
         request = f'{self.plugin_name}::{self.function}({",".join(plugin_args)})'
 
-        # print(f'request = {request}')
         result = self.client.get(request, '')
-        # if hasattr(result, "data"):
-        print(f'pyuda result: {result.data}, dtype: {result.data.dtype}')
-        # self.cache.append(result)
-        print(type(result.data), getattr(result.data, "dtype", None), getattr(result.data, "shape", None))
         return np.asarray(result.data)
