@@ -45,7 +45,7 @@ where = ["src"]
 [tool.setuptools_scm]
 version_scheme = "post-release"
 local_scheme = "node-and-date"
-write_to = "src/tokamunch-pyuda-datasource/_version.py"
+write_to = "src/tokamunch_pyuda_datasource/_version.py"
 
 # [tool.pytest.ini_options]
 # testpaths = ["tests"]
