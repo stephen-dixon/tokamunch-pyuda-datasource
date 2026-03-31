@@ -26,7 +26,7 @@ class PyudaDataSource(libtokamap.DataSource):
         if 'port' not in args:
             raise ValueError("port is required")
 
-        plugin_args = [f'{k}={v}' for (k, v) in args.items()]
+        plugin_args = [f'{k}=\"{v}\"' for (k, v) in args.items()]
         request = f'{self.plugin_name}::{self.function}({",".join(plugin_args)})'
 
         result = self.client.get(request, '')
