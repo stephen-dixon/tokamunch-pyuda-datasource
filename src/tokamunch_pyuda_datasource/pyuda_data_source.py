@@ -1,7 +1,7 @@
 import pyuda
 import libtokamap
 import numpy as np
-from typing import override
+from typing_extensions import override
 import logging
 import time
 
@@ -29,7 +29,6 @@ class PyudaDataSource(libtokamap.DataSource):
             logging.error("source is required")
             raise ValueError("source is required")
         if 'host' not in args:
-            print("no host", flush=True)
             logging.error("host is required")
             raise ValueError("host is required")
         if 'port' not in args:
@@ -59,5 +58,7 @@ class PyudaDataSource(libtokamap.DataSource):
 
         if "time" in args and args["time"]:
             return np.asarray(result.time.data)
+        if "error" in args and args["error"]:
+            return np.asarray(result.error.data)
 
         return np.asarray(result.data)

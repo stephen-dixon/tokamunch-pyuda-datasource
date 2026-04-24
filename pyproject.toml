@@ -14,7 +14,8 @@ authors = [
 license = { text = "MIT" }
 dependencies = [
   "tokamunch",
-  "pyuda"
+  "pyuda",
+  "typing-extensions"
 ]
 keywords = ["tokamap", "libtokamap", "pyuda", "tokamunch", "mappings"]
 classifiers = [
@@ -34,7 +35,7 @@ Repository = "https://github.com/stephen-dixon/tokamunch-pyuda-datasource"
 Issues = "https://github.com/stephen-dixon/tokamunch-pyuda-datasource/issues"
 
 [project.entry-points."tokamunch.data_sources"]
-tokamunch_pyuda_datasource = "tokamunch_pyuda_datasource.plugin:create_data_source"
+pyuda = "tokamunch_pyuda_datasource.plugin:create_data_source"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
@@ -47,5 +48,5 @@ version_scheme = "post-release"
 local_scheme = "no-local-version" #"node-and-date"
 write_to = "src/tokamunch_pyuda_datasource/_version.py"
 
-# [tool.pytest.ini_options]
-# testpaths = ["tests"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]
